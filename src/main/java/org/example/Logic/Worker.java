@@ -85,6 +85,12 @@ public class Worker implements Comparable<Worker>{
 
     }
 
+    /**
+     * Постановка задачи
+     * @param task Описание задачи
+     * @param dayToComplete время на выполнение задачи в днях
+     */
+
     public void assignTask(String task, int dayToComplete) {
         this.tasks.addTask(task, dayToComplete);
     }
@@ -106,6 +112,11 @@ public class Worker implements Comparable<Worker>{
                 ", " + tasks;
     }
 
+    /**
+     * Сортировка по Фамилии сотрудника
+     * @param o the object to be compared.
+     * @return
+     */
     @Override
     public int compareTo(Worker o) {
         return this.surname.compareTo(o.getSurname());

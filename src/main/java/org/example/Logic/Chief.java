@@ -7,7 +7,12 @@ public class Chief extends Worker{
         super(surname, name, middleName, position, phoneNumber, salary, birthDate);
     }
 
-
+    /**
+     * Добавление задачи сотрудникам
+     * @param task описание задачи
+     * @param dayToComplete время на выполнение задачи в днях
+     * @param worker работник, которому ставится задача
+     */
     public void assignTask(String task, int dayToComplete, Worker worker) {
         worker.assignTask(task,dayToComplete);
     }
@@ -17,6 +22,11 @@ public class Chief extends Worker{
         super.assignTask(task, dayToComplete);
     }
 
+    /**
+     * Увеличение зарплаты базовым сотрудникам. Зарплата руководящего состава не увеличивается
+     * @param workers перечень персонала
+     * @param addAmount на сколько увеличивается зарплата
+     */
     public static void addSalary(Personal workers, int addAmount) {
         for (Worker worker : workers.getPersonal()) {
             if (!(worker instanceof Chief)){
